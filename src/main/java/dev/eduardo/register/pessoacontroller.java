@@ -7,16 +7,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-//@CrossOrigin(origins = "http://localhost:3000") // define o origem de acesso na porta 3000, sempre usar para ligar o react
+
+@CrossOrigin(origins = "http://localhost:3000") // define o origem de acesso na porta 3000, sempre usar para ligar o react
 @RestController  
-@RequestMapping //("/")
+@RequestMapping 
 public class pessoacontroller {
 
     @Autowired  
     private PessoaRepository pessoaRepository; 
+
+    @GetMapping("/")
+    public String Root() {
+        return new String();
+    }
 
     @GetMapping("/pessoas")
     public List<Pessoa> listarTodas() {
@@ -27,5 +34,7 @@ public class pessoacontroller {
     public List<exibirnome> listarnomes() {
         return pessoaRepository.findAllBy();
     }
+
+    
     
 }
