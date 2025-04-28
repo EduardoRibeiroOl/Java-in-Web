@@ -1,10 +1,10 @@
-package dev.eduardo.register;
+package dev.eduardo.register.routes;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pessoas")
-public class Pessoa {
+public class Quotedata {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

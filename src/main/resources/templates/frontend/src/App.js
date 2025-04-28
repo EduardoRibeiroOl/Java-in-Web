@@ -1,19 +1,24 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Nomes from './Nomes';
-import Pessoas from './Pessoas';
+import Home from './routes/Home';
+import Nomes from './routes/Nomes';
+import Pessoas from './routes/Pessoas';
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/nomes" element={<Nomes />} />
-        <Route path="/pessoas" element={<Pessoas />} />
-      </Routes>
-    </Router>    
+      <div>
+        <nav>
+          <Link to="/">Home</Link> | 
+          <Link to="/search">Buscar</Link> | 
+          <Link to="/login">Pessoas</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Nomes />} />
+          <Route path="/login" element={<Pessoas />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
-export default App;
-
